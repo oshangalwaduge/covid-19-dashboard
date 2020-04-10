@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./icon.png" sizes="any" type="image/png">
+
+    <title>Covid-19 තත්ව වාර්තාව</title>
+
+    <!-- bootstrap cdn -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- bootstrap cdn end -->
+
+    <!-- icons cdn -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- icons cdn end -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- navbar start -->
+        <nav class="navbar sticky-top navbar-collapse-md navbar-dark bg-dark rounded">
+            <a href="./index.si.html" class="navbar-brand"><i class='fas fa-shield-virus'
+                    style='font-size:28px;color:white'></i> Covid-19 විස්තර පුවරුව</a>
+
+            <div class="dropdown justify-content-end">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="selectlanguage"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    සිංහල
+                </button>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="selectlanguage">
+                    <a class="dropdown-item" href="./index.ta.html">தமிழ்</a>
+                    <a class="dropdown-item" href="./index.html">English</a>
+                </div>
+            </div>
+        </nav>
+        <!-- navbar end -->
+
+        <header>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-12 inline">
+                    <h4 class="text-center" id="last-time-updated"></h4>
+                    <h5 class="text-center">අවසන් වරට යාවත්කාලීන කරන ලදි</h5>
+                </div>
+            </div>
+        </header>
+
+        <!-- starting global content -->
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <h1 class="text-center">ගෝලීය</h1>
+            </div>
+        </div>
+
+        <div class="row  d-flex justify-content-center">
+            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                <div class="card mt-5 border-warning flex-fill"
+                    title="ලෝකය පුරා තහවුරු කරන ලද Covid-19 ආසාදිත මුලු රෝගීන් සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-hospital' style='font-size:48px;color:orange'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-warning" id="global-total"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">තහවුරු කරන ලද මුලු රෝගීන් සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                <div class="card mt-5 border-primary flex-fill"
+                    title="පසුගිය පැය 24 තුළ ගෝලීය වශයෙන් තහවුරු කරන ලද COVID-19 රෝගීන්">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-ambulance' style='font-size:48px;color:#007bff'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-primary" id="global-new"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">නව රෝගීන් සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                <div class="card mt-5 border-danger flex-fill" title="COVID-19 හේතුවෙන් සමස්ත ගෝලීය මරණ සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-bed' style='font-size:48px;color:#dc3545'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-danger" id="global-deaths"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">මරණ සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                <div class="card mt-5 border-dark flex-fill"
+                    title="COVID-19 හේතුවෙන් පසුගිය පැය 24 තුළ වාර්තා වූ මරණ සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-heart-broken' style='font-size:48px;color:black'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-dark" id="global-new-deaths"></h3>
+                        <h6 class=" card-subtitle text-center text-secondary">මෑත කාලීන මරණ සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 d-flex">
+                <div class="card mt-5 border-success flex-fill"
+                    title="Covid-19 රෝගයෙන් ලෝකය පුරා සුවය ලැබූ රෝගීන් සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='far fa-smile-beam' style='font-size:48px;color:#28a745'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-success" id="global-recovered"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">සුවය ලැබූ රෝගීන් සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- global end -->
+
+        <!-- local start -->
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h1 class="text-center">ශ්‍රී ලාංකික</h1>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+                <div class="card mt-5 flex-fill border-warning"
+                    title="ශ්‍රී ලංකාව තුල තහවුරු කරන ලද Covid-19 ආසාදිත මුලු රෝගීන් සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-hospital' style='font-size:48px;color:orange'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-warning" id="total-cases"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">තහවුරු කරන ලද මුලු රෝගීන් සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+                <div class="card mt-5 flex-fill border-info"
+                    title="දැනට ශ්‍රී ලංකාවේ රෝහල්වල ප්‍රතිකාර ලබන Covid-19 තහවුරු වූ රෝගීන් සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-procedures' style='font-size:48px;color:#17a2b8'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-info" id="active-cases"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">ප්‍රතිකාර ලබන රෝගීන් සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+                <div class="card mt-5 flex-fill border-primary"
+                    title="ශ්‍රී ලංකාව තුල පසුගිය පැය 24 තුළ වාර්තා වූ COVID-19 රෝගීන්">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-ambulance' style='font-size:48px;color:#007bff'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-primary" id="new-cases"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">නව රෝගීන් සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+                <div class="card mt-5 flex-fill border-dark"
+                    title="ශ්‍රී ලංකාව තුල පසුගිය පැය 24 තුළ COVID-19 හේතුවෙන් සිදු වූ මුළු මරණ සංඛ්‍යාව.">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-heart-broken' style='font-size:48px;color:black'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-dark" id="new-deaths" title="Between Last 24 Hours.">
+                        </h3>
+                        <h6 class="card-subtitle text-center text-secondary" title="Between Last 24 Hours.">මෑත කාලීන
+                            මරණ සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+                <div class="card mt-5 flex-fill border-success"
+                    title="ශ්‍රී ලංකාව තුල Covid-19 රෝගයෙන් සුවය ලබා පිටවූ රෝගීන් සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='far fa-smile-beam' style='font-size:48px;color:#28a745'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-success" id="recovered"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">සුවය ලැබූ රෝගීන් සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+                <div class="card mt-5 flex-fill border-danger"
+                    title="ශ්‍රී ලංකාව තුල Covid-19 රෝගයෙන් හේතුවෙන් මියගිය මුලු පුද්ගලයින්ගේ සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-bed' style='font-size:48px;color:#dc3545'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-danger" id="deaths"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">මරණ සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- local end -->
+
+
+        <!-- starting hospital -->
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h1 class="text-center" id="hospital-section">රෝහල් තොරතුරු</h1>
+            </div>
+        </div>
+
+        <!-- dropdown start -->
+
+        <div class="row justify-content-center text-center mt-3">
+            <div class="col-12">
+
+                <div class="dropdown">
+                    <button id="hdd" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                        රෝහල තෝරන්න
+                    </button>
+                    <div class="dropdown-menu" style="max-height:250px; overflow:auto;" aria-labelledby="hdd" id="hddm">
+                        <a class="dropdown-item" id="0" href="#hospital-section">බෝවන රෝග පිළිබඳ ජාතික ආයතනය</a>
+                        <a class="dropdown-item" id="1" href="#hospital-section">ශ්‍රී ලංකා ජාතික රෝහල</a>
+                        <a class="dropdown-item" id="2" href="#hospital-section">ශික්ෂණ රෝහල - රාගම</a>
+                        <a class="dropdown-item" id="3" href="#hospital-section">ශික්ෂණ රෝහල - කරපිටිය</a>
+                        <a class="dropdown-item" id="4" href="#hospital-section">ශික්ෂණ රෝහල - අනුරාධපුර</a>
+                        <a class="dropdown-item" id="5" href="#hospital-section">ශික්ෂණ රෝහල - කුරුණගල</a>
+                        <a class="dropdown-item" id="6" href="#hospital-section">ශික්ෂණ රෝහල - යාපනය</a>
+                        <a class="dropdown-item" id="7" href="#hospital-section">ජාතික රෝහල - මහනුවර</a>
+                        <a class="dropdown-item" id="8" href="#hospital-section">ශික්ෂණ රෝහල - මඩකලපුව</a>
+                        <a class="dropdown-item" id="9" href="#hospital-section">දිස්ත්‍රික් මහ රෝහල - ගම්පහ</a>
+                        <a class="dropdown-item" id="10" href="#hospital-section">දිස්ත්‍රික් මහ රෝහල - මීගමුව</a>
+                        <a class="dropdown-item" id="11" href="#hospital-section">ශික්ෂණ රෝහල - රත්නපුර</a>
+                        <a class="dropdown-item" id="12" href="#hospital-section">පළාත් මහ රෝහල - බදුල්ල</a>
+                        <a class="dropdown-item" id="13" href="#hospital-section">රිජ්වේ ආර්යා ළමා රෝහල</a>
+                        <a class="dropdown-item" id="14" href="#hospital-section">ඩි සොයිසා කාන්තා රෝහල</a>
+                        <a class="dropdown-item" id="15" href="#hospital-section">දිස්ත්‍රික් මහ රෝහල - පොලොන්නරුව</a>
+                        <a class="dropdown-item" id="16" href="#hospital-section">දිස්ත්‍රික් මහ රෝහල - කලුබෝවිල</a>
+                        <a class="dropdown-item" id="17" href="#hospital-section">කාසල් වීදියේ ශික්ෂණ රෝහල</a>
+                        <a class="dropdown-item" id="18" href="#hospital-section">මූලික රෝහල - හම්බන්තොට</a>
+                        <a class="dropdown-item" id="19" href="#hospital-section">මූලික රෝහල - මොනරාගල</a>
+                        <a class="dropdown-item" id="20" href="#hospital-section">මූලික රෝහල - වැලිකන්ද</a>
+                        <a class="dropdown-item" id="21" href="#hospital-section">දිස්ත්‍රික් මහ රෝහල - කළුතර</a>
+                        <a class="dropdown-item" id="22" href="#hospital-section">ළය රෝහල - වැලිසර</a>
+                        <a class="dropdown-item" id="23" href="#hospital-section">මූලික රෝහල - මුල්ලේරියාව</a>
+                        <a class="dropdown-item" id="24" href="#hospital-section">මූලික රෝහල - හෝමාගම</a>
+                        <a class="dropdown-item" id="25" href="#hospital-section">නෙවිල් ප්‍රනාන්දු රෝහල</a>
+                        <a class="dropdown-item" id="26" href="#hospital-section">දිස්ත්‍රික් මහ රෝහල - හලාවත</a>
+                        <a class="dropdown-item" id="27" href="#hospital-section">දිස්ත්‍රික් මහ රෝහල - මාතර</a>
+                        <a class="dropdown-item" id="28" href="#hospital-section">කොතලාවල ආරක්ෂක විශ්ව විද්‍යාල රෝහල</a>
+                        <a class="dropdown-item" id="29" href="#hospital-section">දිස්ත්‍රික් මහ රෝහල - වවුනියාව</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- dropdown end -->
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 d-flex">
+                <div class="card mt-5 flex-fill border-primary">
+                    <div class="card-body border-primary">
+                        <div class="row justify-content-center">
+                            <i class='far fa-hospital' style='font-size:48px;color:#007bff'></i>
+                        </div>
+                        <br />
+                        <div id="hpn" class="d-none"></div>
+                        <div id="hpnta" class="d-none"></div>
+                        <h3 class="card-title text-center" id="hpnsi">රෝහල</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex">
+                <div class="card mt-5 flex-fill border-dark">
+                    <div class="card-body border-dark">
+                        <div class="row justify-content-center">
+                            <i class='far fa-clock' style='font-size:48px;color:#000'></i>
+                        </div>
+                        <br />
+                        <h6 class="card-subtitle text-center">අවසන් වරට යාවත්කාලීන කරන ලදි</h6>
+                        <h3 class="card-title text-center align-middle" id="hplt">වේලාව</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center d-flex">
+            <div class="col-6 col-lg-3 flex-fill">
+                <div class="card mt-5 flex-fill border-success"
+                    title="ලබා දී ඇති රෝහලේ COVID-19 සඳහා ප්‍රතිකාර ලබා ඇති / නිරීක්ෂණය කළ ශ්‍රී ලාංකිකයින් සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-running' style='font-size:48px;color:#28a745'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-success" id="cumulativelocal">#</h3>
+                        <h6 class="card-subtitle text-center">ප්‍රතිකාර ලැබූ / නිරීක්ෂණය කළ ශ්‍රී ලාංකිකයන්ගේ මුළු
+                            සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3 d-flex">
+                <div class="card mt-5 flex-fill border-success"
+                    title="ලබා දී ඇති රෝහලේ COVID-19 සඳහා ප්‍රතිකාර ලබා ඇති / නිරීක්ෂණය කළ විදේශිකයින් සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='far fa-smile-beam' style='font-size:48px;color:#28a745'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-success" id="cumulativeforeign">#</h3>
+                        <h6 class="card-subtitle text-center">ප්‍රතිකාර ලැබූ / නිරීක්ෂණය කළ විදේශිකයින්ගේ මුළු
+                            සංඛ්‍යාව</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3 d-flex">
+                <div class="card mt-5 flex-fill border-warning"
+                    title="ලබා දී ඇති රෝහලේ COVID-19 සඳහා දැනට ප්‍රතිකාර / නිරීක්ෂණයේ යෙදී සිටින ශ්‍රී ලාංකිකයින් සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-plus-square' style='font-size:48px;color:orange'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-warning" id="treatmentlocal">#</h3>
+                        <h6 class="card-subtitle text-center">දැනට ප්‍රතිකාර / නිරීක්ෂණයේ යෙදී සිටින ශ්‍රී ලාංකිකයන්ගේ
+                            මුළු සංඛ්‍යාව
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3 d-flex">
+                <div class="card mt-5 flex-fill border-warning"
+                    title="ලබා දී ඇති රෝහලේ COVID-19 සඳහා දැනට ප්‍රතිකාර / නිරීක්ෂණයේ යෙදී සිටින විදේශිකයින් සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-procedures' style='font-size:48px;color:orange'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center text-warning" id="treatmentforeign">#</h3>
+                        <h6 class="card-subtitle text-center">දැනට ප්‍රතිකාර / නිරීක්ෂණයේ යෙදී සිටින විදේශිකයින්ගේ මුළු
+                            සංඛ්‍යාව
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- hospital end -->
+
+        <!-- footer -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h6 class="text-center">තොරතුරු මූලශ්‍රය - <a class="text-dark" href="https://www.hpb.health.gov.lk/en"
+                        target="_blank">සෞඛ්‍ය ප්‍රවර්ධන කාර්යාංශය - ශ්‍රී ලංකාව</a></h6>
+                <h6 class="text-center">නිර්මාණය - ඔෂාන් ගල්වඩුගේ</h6>
+                <div class="row justify-content-center">
+                    <a href="https://www.linkedin.com/in/oshan-galwaduge-0a7615139/" target="_blank">
+                        <i class="fab fa-linkedin mr-3" style="font-size:24px;color:#0072b1" title="LinkedIn"></i></a>
+                    <a href="https://facebook.com/oshangalwaduge" target="_blank">
+                        <i class="fab fa-facebook-square mr-3" style="font-size:24px;color:#3b5998"
+                            title="Facebook"></i></a>
+                    <a href="https://www.instagram.com/_0shan_/" target="_blank">
+                        <i class="fab fa-instagram" style="font-size:24px;color:#fb3958" title="Instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- footer end -->
+
+    </div>
+
+    <script src="./js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./icon.png" sizes="any" type="image/png">
+
+  <title>Covid-19 Status Report</title>
+
+  <!-- bootstrap cdn -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- bootstrap cdn end -->
+
+  <!-- icons cdn -->
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+  <!-- icons cdn end -->
+</head>
+
+<body>
+  <div class="container">
+    <!-- navbar start -->
+    <nav class="navbar sticky-top navbar-collapse-md navbar-dark bg-dark rounded">
+      <a href="./index.html" class="navbar-brand"><i class='fas fa-shield-virus' style='font-size:28px;color:white'></i>
+        Covid-19 Dashboard</a>
+
+      <div class="dropdown justify-content-end">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="selectlanguage" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          English
+        </button>
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="selectlanguage">
+          <a class="dropdown-item" href="./index.si.html">සිංහල</a>
+          <a class="dropdown-item" href="./index.ta.html">தமிழ்</a>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar end -->
+
+    <header>
+      <div class="row mt-4 justify-content-center">
+        <div class="col-12 inline">
+          <h5 class="text-center">Last Time Updated</h5>
+          <h4 class="text-center" id="last-time-updated"></h4>
+        </div>
+      </div>
+    </header>
+
+    <!-- starting global content -->
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <h1 class="text-center">Global</h1>
+      </div>
+    </div>
+
+    <div class="row  d-flex justify-content-center">
+      <div class="col-12 col-sm-6 col-md-4 d-flex">
+        <div class="card mt-5 border-warning flex-fill" title="Total global confirmed COVID-19 cases">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-hospital' style='font-size:48px;color:orange'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-warning" id="global-total"></h3>
+            <h6 class="card-subtitle text-center text-secondary">Total Confirmed Cases</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 d-flex">
+        <div class="card mt-5 border-primary flex-fill"
+          title="Global confirmed COVID-19 cases reported during last 24 hours">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-ambulance' style='font-size:48px;color:#007bff'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-primary" id="global-new"></h3>
+            <h6 class="card-subtitle text-center text-secondary">New Cases</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 d-flex">
+        <div class="card mt-5 border-danger flex-fill" title="Total global deaths due to COVID-19">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-bed' style='font-size:48px;color:#dc3545'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-danger" id="global-deaths"></h3>
+            <h6 class="card-subtitle text-center text-secondary">Deaths</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 d-flex">
+        <div class="card mt-5 border-dark flex-fill"
+          title="Global deaths due to COVID-19 reported during last 24 hours">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-heart-broken' style='font-size:48px;color:black'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-dark" id="global-new-deaths"></h3>
+            <h6 class=" card-subtitle text-center text-secondary">Recent Deaths</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 d-flex">
+        <div class="card mt-5 border-success flex-fill" title="Total Global COVID-19 cases who recovered">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='far fa-smile-beam' style='font-size:48px;color:#28a745'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-success" id="global-recovered"></h3>
+            <h6 class="card-subtitle text-center text-secondary">Patients Recovered</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- global end -->
+
+    <!-- local start -->
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <h1 class="text-center">Sri Lankan</h1>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+        <div class="card mt-5 flex-fill border-warning"
+          title="Cumulative count of confirmed COVID-19 cases in Sri Lanka">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-hospital' style='font-size:48px;color:orange'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-warning" id="total-cases"></h3>
+            <h6 class="card-subtitle text-center text-secondary">Total Confirmed Cases</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+        <div class="card mt-5 flex-fill border-info"
+          title="Confirmed COVID-19 cases currently on treatment at the Hospitals in Sri Lanka">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-procedures' style='font-size:48px;color:#17a2b8'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-info" id="active-cases"></h3>
+            <h6 class="card-subtitle text-center text-secondary">Active Cases</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+        <div class="card mt-5 flex-fill border-primary" title="Confirmed COVID-19 cases reported during last 24 hours">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-ambulance' style='font-size:48px;color:#007bff'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-primary" id="new-cases"></h3>
+            <h6 class="card-subtitle text-center text-secondary">New Cases</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+        <div class="card mt-5 flex-fill border-dark"
+          title="Total deaths due to COVID-19 reported during last 24 hours.">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-heart-broken' style='font-size:48px;color:black'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-dark" id="new-deaths" title="Between Last 24 Hours."></h3>
+            <h6 class="card-subtitle text-center text-secondary" title="Between Last 24 Hours.">Recent Deaths</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+        <div class="card mt-5 flex-fill border-success"
+          title="Total COVID-19 cases recovered and discharged in Sri Lanka">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='far fa-smile-beam' style='font-size:48px;color:#28a745'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-success" id="recovered"></h3>
+            <h6 class="card-subtitle text-center text-secondary">Patients Recovered</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+        <div class="card mt-5 flex-fill border-danger" title="Total deaths due to COVID-19 reported in Sri Lanka">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-bed' style='font-size:48px;color:#dc3545'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-danger" id="deaths"></h3>
+            <h6 class="card-subtitle text-center text-secondary">Deaths</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- local end -->
+
+
+    <!-- starting hospital -->
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <h1 class="text-center" id="hospital-section">By Hospital</h1>
+      </div>
+    </div>
+
+    <!-- dropdown start -->
+
+    <div class="row justify-content-center text-center mt-3">
+      <div class="col-12">
+
+        <div class="dropdown">
+          <button id="hdd" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+            Select the hospital
+          </button>
+          <div class="dropdown-menu" style="max-height:250px; overflow:auto;" aria-labelledby="hdd" id="hddm">
+            <a class="dropdown-item" id="0" href="#hospital-section">National Institute of
+              Infectious Diseases</a>
+            <a class="dropdown-item" id="1" href="#hospital-section">National Hospital Sri Lanka</a>
+            <a class="dropdown-item" id="2" href="#hospital-section">Teaching Hospital - Ragama</a>
+            <a class="dropdown-item" id="3" href="#hospital-section">Teaching Hospital - Karapitiya</a>
+            <a class="dropdown-item" id="4" href="#hospital-section">Teaching Hospital - Anuradhapura</a>
+            <a class="dropdown-item" id="5" href="#hospital-section">Teaching Hospital - Kurunegala</a>
+            <a class="dropdown-item" id="6" href="#hospital-section">Teaching Hospital - Jaffna</a>
+            <a class="dropdown-item" id="7" href="#hospital-section">National Hospital Kandy</a>
+            <a class="dropdown-item" id="8" href="#hospital-section">Teaching Hospital - Batticaloa</a>
+            <a class="dropdown-item" id="9" href="#hospital-section">District General Hospital - Gampaha</a>
+            <a class="dropdown-item" id="10" href="#hospital-section">District General Hospital – Negombo</a>
+            <a class="dropdown-item" id="11" href="#hospital-section">Teaching Hospital - Rathnapura</a>
+            <a class="dropdown-item" id="12" href="#hospital-section">Provincial General Hospital - Badulla</a>
+            <a class="dropdown-item" id="13" href="#hospital-section">Lady Ridgeway Hospital for Children (LRH)</a>
+            <a class="dropdown-item" id="14" href="#hospital-section">De Soysa Hospital for Women (DMH)</a>
+            <a class="dropdown-item" id="15" href="#hospital-section">District General Hospital - Polonnaruwa</a>
+            <a class="dropdown-item" id="16" href="#hospital-section">District General Hospital - Kalubowila</a>
+            <a class="dropdown-item" id="17" href="#hospital-section">Castle Street Teaching Hospital</a>
+            <a class="dropdown-item" id="18" href="#hospital-section">Base Hospital - Hambantota</a>
+            <a class="dropdown-item" id="19" href="#hospital-section">Base Hospital - Monaragala</a>
+            <a class="dropdown-item" id="20" href="#hospital-section">Base Hospital - Welikanda</a>
+            <a class="dropdown-item" id="21" href="#hospital-section">District General Hospital - Kalutara</a>
+            <a class="dropdown-item" id="22" href="#hospital-section">Chest Hospital Welisara</a>
+            <a class="dropdown-item" id="23" href="#hospital-section">Base Hospital - Mulleriyawa</a>
+            <a class="dropdown-item" id="24" href="#hospital-section">Base Hospital - Homagama</a>
+            <a class="dropdown-item" id="25" href="#hospital-section">Dr. Nevil Fernando Hospital</a>
+            <a class="dropdown-item" id="26" href="#hospital-section">District General Hospital – Chillaw</a>
+            <a class="dropdown-item" id="27" href="#hospital-section">District General Hospital – Matara</a>
+            <a class="dropdown-item" id="28" href="#hospital-section">K.D.U. Hospital</a>
+            <a class="dropdown-item" id="29" href="#hospital-section">District General Hospital – Vavunia</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- dropdown end -->
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 d-flex">
+        <div class="card mt-5 flex-fill border-primary">
+          <div class="card-body border-primary">
+            <div class="row justify-content-center">
+              <i class='far fa-hospital' style='font-size:48px;color:#007bff'></i>
+            </div>
+            <br />
+            <div id="hpnta" class="d-none"></div>
+            <div id="hpnsi" class="d-none"></div>
+            <h3 class="card-title text-center" id="hpn">Hospital</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 d-flex">
+        <div class="card mt-5 flex-fill border-dark">
+          <div class="card-body border-dark">
+            <div class="row justify-content-center">
+              <i class='far fa-clock' style='font-size:48px;color:#000'></i>
+            </div>
+            <br />
+            <h6 class="card-subtitle text-center">Last Time Updated</h6>
+            <h3 class="card-title text-center align-middle" id="hplt">Time</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row justify-content-center d-flex">
+      <div class="col-6 col-lg-3 flex-fill">
+        <div class="card mt-5 flex-fill border-success"
+          title="Total number of Sri Lankans who have been treated /observed for COVID-19 in a given hospital">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-running' style='font-size:48px;color:#28a745'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-success" id="cumulativelocal">#</h3>
+            <h6 class="card-subtitle text-center">Total # of Sri Lankans who have been treated / observed</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3 d-flex">
+        <div class="card mt-5 flex-fill border-success"
+          title="Total number of foreigners who have been treated /observed for COVID-19 in a given hospital">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='far fa-smile-beam' style='font-size:48px;color:#28a745'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-success" id="cumulativeforeign">#</h3>
+            <h6 class="card-subtitle text-center">Total # of foreigners who have been treated / observed</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3 d-flex">
+        <div class="card mt-5 flex-fill border-warning"
+          title="Total number of Sri Lankans who are currently on treatment/observation for COVID-19 in a given hospital">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-plus-square' style='font-size:48px;color:orange'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-warning" id="treatmentlocal">#</h3>
+            <h6 class="card-subtitle text-center">Total # of Sri Lankans who are currently on treatment/observation
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3 d-flex">
+        <div class="card mt-5 flex-fill border-warning"
+          title="Total number of foreigners who are currently on treatment/observation for COVID-19 in a given hospital">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-procedures' style='font-size:48px;color:orange'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center text-warning" id="treatmentforeign">#</h3>
+            <h6 class="card-subtitle text-center">Total # of foreigners who are currently on treatment/observation
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- hospital end -->
+
+    <!-- footer -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h6 class="text-center">Information Source - <a class="text-dark" href="https://www.hpb.health.gov.lk/en"
+            target="_blank">Health
+            Promotion Bureau - Sri Lanka</a></h6>
+        <h6 class="text-center">Designed by Oshan Galwaduge</h6>
+        <div class="row justify-content-center">
+          <a href="https://www.linkedin.com/in/oshan-galwaduge-0a7615139/" target="_blank">
+            <i class="fab fa-linkedin mr-3" style="font-size:24px;color:#0072b1" title="LinkedIn"></i></a>
+          <a href="https://facebook.com/oshangalwaduge" target="_blank">
+            <i class="fab fa-facebook-square mr-3" style="font-size:24px;color:#3b5998" title="Facebook"></i></a>
+          <a href="https://www.instagram.com/_0shan_/" target="_blank">
+            <i class="fab fa-instagram" style="font-size:24px;color:#fb3958" title="Instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <!-- footer end -->
+
+  </div>
+
+  <script src="./js/dashboard.js"></script>
+</body>
+
+</html>
