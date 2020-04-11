@@ -6,10 +6,13 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
       );
       return;
     }
+    else {
+      console.log("Connection Successful.")
+    }
 
     // Examine the text in the response
     response.json().then(function (information) {
-      console.log(information);
+      //console.log(information);
       let updatedTime = information.data.update_date_time;
       let globalTotal = information.data.global_total_cases;
       let globalNew = information.data.global_new_cases;
@@ -48,7 +51,7 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
 
       $(document).ready(function () {
         $('#hddm > a').on('click', function () {
-          console.log($(this).attr('id'));
+          //console.log($(this).attr('id'));
           document.getElementById("hdd").innerHTML = $(this).text();
 
           let i;
@@ -71,7 +74,7 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
               document.getElementById("cumulativeforeign").innerHTML = cf;
               document.getElementById("treatmentlocal").innerHTML = tl;
               document.getElementById("treatmentforeign").innerHTML = tf;
-              console.log(hnsi);
+              //console.log(hnsi);
               // i = i + 1;
             }
           }
@@ -88,7 +91,7 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
 
 
 
-      console.log(updatedTime);
+      //console.log(updatedTime);
     });
   })
   .catch(function (err) {
