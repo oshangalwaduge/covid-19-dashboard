@@ -29,7 +29,7 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
 
       let mrdm, mrdm_ta, mrdm_si;
       let format = parseInt(updatedTime.split(" ")[1].substr(0, 2));
-      console.log(format);
+      // console.log(format);
       if (format < 12) {
         mrdm = "AM";
         mrdm_ta = "முற்பகல்";
@@ -101,7 +101,7 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
 
               let hmrdm, hmrdm_ta, hmrdm_si;
               let htformat = parseInt(lut.split(" ")[1].substr(0, 2));
-              console.log(htformat);
+              // console.log(htformat);
 
 
               if (htformat < 12) {
