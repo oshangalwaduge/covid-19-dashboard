@@ -27,19 +27,48 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
       let recovered = information.data.local_recovered;
       let deaths = information.data.local_deaths;
 
-      document.getElementById("last-time-updated").innerHTML = updatedTime;
-      document.getElementById("global-total").innerHTML = globalTotal;
-      document.getElementById("global-new").innerHTML = globalNew;
-      document.getElementById("global-deaths").innerHTML = globalDeaths;
-      document.getElementById("global-new-deaths").innerHTML = globalNewDeaths;
-      document.getElementById("global-recovered").innerHTML = globalRecovered;
+      let mrdm, mrdm_ta, mrdm_si;
+      let format = parseInt(updatedTime.split(" ")[1].substr(0, 2));
+      console.log(format);
+      if (format < 12) {
+        mrdm = "AM";
+        mrdm_ta = "முற்பகல்";
+        mrdm_si = "පෙරවරු";
+      }
+      else if (format == 12) {
+        mrdm = "PM";
+        mrdm_ta = "மாலை";
+        mrdm_si = "පස්වරු";
+      }
+      else if (format > 12 && format <= 23) {
+        mrdm = "PM";
+        mrdm_ta = "மாலை";
+        mrdm_si = "පස්වරු";
+      }
+      else if (format == 00) {
+        mrdm = "AM";
+        mrdm_ta = "முற்பகல்";
+        mrdm_si = "පෙරවරු";
+      }
 
-      document.getElementById("total-cases").innerHTML = totalCases;
-      document.getElementById("active-cases").innerHTML = activeCases;
-      document.getElementById("new-cases").innerHTML = newCases;
-      document.getElementById("new-deaths").innerHTML = newDeaths;
-      document.getElementById("recovered").innerHTML = recovered;
-      document.getElementById("deaths").innerHTML = deaths;
+
+
+      document.getElementById("last-time-updated").innerHTML = "On " + updatedTime.split(" ")[0] + "<br /> At " + updatedTime.split(" ")[1].substr(0, 5) + " " + mrdm;
+      document.getElementById("last-time-updated-ta").innerHTML = updatedTime.split(" ")[0] + " நாள்" + "<br />" + mrdm_ta + " " + updatedTime.split(" ")[1].substr(0, 5);
+      document.getElementById("last-time-updated-si").innerHTML = updatedTime.split(" ")[0] + " දින" + "<br />" + mrdm_si + " " + updatedTime.split(" ")[1].substr(0, 5) + " ට";
+
+      document.getElementById("global-total").innerHTML = globalTotal.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("global-new").innerHTML = globalNew.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("global-deaths").innerHTML = globalDeaths.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("global-new-deaths").innerHTML = globalNewDeaths.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("global-recovered").innerHTML = globalRecovered.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+
+      document.getElementById("total-cases").innerHTML = totalCases.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("active-cases").innerHTML = activeCases.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("new-cases").innerHTML = newCases.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("new-deaths").innerHTML = newDeaths.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("recovered").innerHTML = recovered.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("deaths").innerHTML = deaths.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
       //let h1 = information.data.hospital_data[0].hospital.name;
 
@@ -48,8 +77,11 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
 
 
 
-
       $(document).ready(function () {
+
+        //console.log(globalTotal.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
+
+
         $('#hddm > a').on('click', function () {
           //console.log($(this).attr('id'));
           document.getElementById("hdd").innerHTML = $(this).text();
@@ -65,11 +97,42 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
               let cf = information.data.hospital_data[i].cumulative_foreign;
               let tl = information.data.hospital_data[i].treatment_local;
               let tf = information.data.hospital_data[i].treatment_foreign;
+              let lut_ta, lut_si;
+
+              let hmrdm, hmrdm_ta, hmrdm_si;
+              let htformat = parseInt(lut.split(" ")[1].substr(0, 2));
+              console.log(htformat);
+
+
+              if (htformat < 12) {
+                hmrdm = "AM";
+                hmrdm_ta = "முற்பகல்";
+                hmrdm_si = "පෙරවරු";
+              }
+              else if (htformat == 12) {
+                hmrdm = "PM";
+                hmrdm_ta = "மாலை";
+                hmrdm_si = "පස්වරු";
+              }
+              else if (htformat > 12 && format <= 23) {
+                hmrdm = "PM";
+                hmrdm_ta = "மாலை";
+                hmrdm_si = "පස්වරු";
+              }
+              else if (htformat == 00) {
+                hmrdm = "AM";
+                hmrdm_ta = "முற்பகல்";
+                hmrdm_si = "පෙරවරු";
+              }
 
               document.getElementById("hpn").innerHTML = hn;
               document.getElementById("hpnsi").innerHTML = hnsi;
               document.getElementById("hpnta").innerHTML = hnta;
-              document.getElementById("hplt").innerHTML = lut;
+
+              document.getElementById("hplt").innerHTML = "On " + lut.split(" ")[0] + "<br /> At " + lut.split(" ")[1].substr(0, 5) + " " + hmrdm;
+              document.getElementById("hplt_ta").innerHTML = updatedTime.split(" ")[0] + " நாள்" + "<br />" + hmrdm_ta + " " + lut.split(" ")[1].substr(0, 5);
+              document.getElementById("hplt_si").innerHTML = updatedTime.split(" ")[0] + " දින" + "<br />" + hmrdm_si + " " + lut.split(" ")[1].substr(0, 5) + " ට";
+
               document.getElementById("cumulativelocal").innerHTML = cl;
               document.getElementById("cumulativeforeign").innerHTML = cf;
               document.getElementById("treatmentlocal").innerHTML = tl;

@@ -68,8 +68,10 @@
         <header>
             <div class="row mt-4 justify-content-center">
                 <div class="col-12 inline">
-                    <h4 class="text-center" id="last-time-updated"></h4>
+                    <h5 class="text-center" id="last-time-updated-si"></h5>
                     <h5 class="text-center">අවසන් වරට යාවත්කාලීන කරන ලදි</h5>
+                    <div class="d-none" id="last-time-updated"></div>
+                    <div class="d-none" id="last-time-updated-ta"></div>
                 </div>
             </div>
         </header>
@@ -88,7 +90,7 @@
                     title="ලෝකය පුරා තහවුරු කරන ලද Covid-19 ආසාදිත මුලු රෝගීන් සංඛ්‍යාව">
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <i class='fas fa-hospital' style='font-size:48px;color:orange'></i>
+                            <i class='fas fa-hospital' style='font-size:48px;color:#ffc107'></i>
                         </div>
                         <br />
                         <h3 class="card-title text-center text-warning" id="global-total"></h3>
@@ -123,14 +125,14 @@
             </div>
 
             <div class="col-12 col-sm-6 col-md-4 d-flex">
-                <div class="card mt-5 border-dark flex-fill"
-                    title="COVID-19 හේතුවෙන් පසුගිය පැය 24 තුළ වාර්තා වූ මරණ සංඛ්‍යාව">
+                <div class="card mt-5 flex-fill" style="border-color: #e83e8c;"
+                    title=" COVID-19 හේතුවෙන් පසුගිය පැය 24 තුළ වාර්තා වූ මරණ සංඛ්‍යාව">
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <i class='fas fa-heart-broken' style='font-size:48px;color:black'></i>
+                            <i class='fas fa-heart-broken' style='font-size:48px;color:#e83e8c'></i>
                         </div>
                         <br />
-                        <h3 class="card-title text-center text-dark" id="global-new-deaths"></h3>
+                        <h3 class="card-title text-center" id="global-new-deaths" style="color: #e83e8c;"></h3>
                         <h6 class=" card-subtitle text-center text-secondary">මෑත කාලීන මරණ සංඛ්‍යාව</h6>
                     </div>
                 </div>
@@ -166,7 +168,7 @@
                     title="ශ්‍රී ලංකාව තුල තහවුරු කරන ලද Covid-19 ආසාදිත මුලු රෝගීන් සංඛ්‍යාව">
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <i class='fas fa-hospital' style='font-size:48px;color:orange'></i>
+                            <i class='fas fa-hospital' style='font-size:48px;color:#ffc107'></i>
                         </div>
                         <br />
                         <h3 class="card-title text-center text-warning" id="total-cases"></h3>
@@ -204,16 +206,16 @@
             </div>
 
             <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
-                <div class="card mt-5 flex-fill border-dark"
+                <div class="card mt-5 flex-fill" style="border-color: #e83e8c;"
                     title="ශ්‍රී ලංකාව තුල පසුගිය පැය 24 තුළ COVID-19 හේතුවෙන් සිදු වූ මුළු මරණ සංඛ්‍යාව.">
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <i class='fas fa-heart-broken' style='font-size:48px;color:black'></i>
+                            <i class='fas fa-heart-broken' style='font-size:48px;color:#e83e8c'></i>
                         </div>
                         <br />
-                        <h3 class="card-title text-center text-dark" id="new-deaths" title="Between Last 24 Hours.">
+                        <h3 class="card-title text-center text-dark" id="new-deaths" style="color: #e83e8c;">
                         </h3>
-                        <h6 class="card-subtitle text-center text-secondary" title="Between Last 24 Hours.">මෑත කාලීන
+                        <h6 class="card-subtitle text-center text-secondary">මෑත කාලීන
                             මරණ සංඛ්‍යාව</h6>
                     </div>
                 </div>
@@ -329,8 +331,10 @@
                             <i class='far fa-clock' style='font-size:48px;color:#000'></i>
                         </div>
                         <br />
-                        <h6 class="card-subtitle text-center">අවසන් වරට යාවත්කාලීන කරන ලදි</h6>
-                        <h3 class="card-title text-center align-middle" id="hplt">වේලාව</h3>
+                        <h5 class="card-title text-center align-middle text-dark" id="hplt_si">වේලාව</h5>
+                        <h6 class="card-subtitle text-center text-dark">අවසන් වරට යාවත්කාලීන කරන ලදි</h6>
+                        <div class="d-none" id="hplt"></div>
+                        <div class="d-none" id="hplt_ta"></div>
                     </div>
                 </div>
             </div>
@@ -347,7 +351,8 @@
                         </div>
                         <br />
                         <h3 class="card-title text-center text-success" id="cumulativelocal">#</h3>
-                        <h6 class="card-subtitle text-center">ප්‍රතිකාර ලැබූ / නිරීක්ෂණය කළ ශ්‍රී ලාංකිකයන්ගේ මුළු
+                        <h6 class="card-subtitle text-center text-secondary">ප්‍රතිකාර ලැබූ / නිරීක්ෂණය කළ ශ්‍රී
+                            ලාංකිකයන්ගේ මුළු
                             සංඛ්‍යාව</h6>
                     </div>
                 </div>
@@ -361,7 +366,8 @@
                         </div>
                         <br />
                         <h3 class="card-title text-center text-success" id="cumulativeforeign">#</h3>
-                        <h6 class="card-subtitle text-center">ප්‍රතිකාර ලැබූ / නිරීක්ෂණය කළ විදේශිකයින්ගේ මුළු
+                        <h6 class="card-subtitle text-center text-secondary">ප්‍රතිකාර ලැබූ / නිරීක්ෂණය කළ විදේශිකයින්ගේ
+                            මුළු
                             සංඛ්‍යාව</h6>
                     </div>
                 </div>
@@ -375,7 +381,8 @@
                         </div>
                         <br />
                         <h3 class="card-title text-center text-warning" id="treatmentlocal">#</h3>
-                        <h6 class="card-subtitle text-center">දැනට ප්‍රතිකාර / නිරීක්ෂණයේ යෙදී සිටින ශ්‍රී ලාංකිකයන්ගේ
+                        <h6 class="card-subtitle text-center text-secondary">දැනට ප්‍රතිකාර / නිරීක්ෂණයේ යෙදී සිටින
+                            ශ්‍රී ලාංකිකයන්ගේ
                             මුළු සංඛ්‍යාව
                         </h6>
                     </div>
@@ -390,7 +397,8 @@
                         </div>
                         <br />
                         <h3 class="card-title text-center text-warning" id="treatmentforeign">#</h3>
-                        <h6 class="card-subtitle text-center">දැනට ප්‍රතිකාර / නිරීක්ෂණයේ යෙදී සිටින විදේශිකයින්ගේ මුළු
+                        <h6 class="card-subtitle text-center text-secondary">දැනට ප්‍රතිකාර / නිරීක්ෂණයේ යෙදී සිටින
+                            විදේශිකයින්ගේ මුළු
                             සංඛ්‍යාව
                         </h6>
                     </div>
@@ -404,8 +412,9 @@
         <!-- footer -->
         <div class="row mt-5">
             <div class="col-12">
-                <h6 class="text-center">තොරතුරු මූලශ්‍රය - <a class="text-dark" href="https://www.hpb.health.gov.lk/en"
-                        target="_blank">සෞඛ්‍ය ප්‍රවර්ධන කාර්යාංශය - ශ්‍රී ලංකාව</a></h6>
+                <h6 class="text-center">තොරතුරු මූලශ්‍රය(API) - <a class="text-dark"
+                        href="https://www.hpb.health.gov.lk/en" target="_blank">සෞඛ්‍ය ප්‍රවර්ධන කාර්යාංශය - ශ්‍රී
+                        ලංකාව</a></h6>
                 <h6 class="text-center">නිර්මාණය - ඔෂාන් ගල්වඩුගේ</h6>
                 <div class="row justify-content-center">
                     <a href="https://www.linkedin.com/in/oshan-galwaduge-0a7615139/" target="_blank">
@@ -413,8 +422,6 @@
                     <a href="https://facebook.com/oshangalwaduge" target="_blank">
                         <i class="fab fa-facebook-square mr-3" style="font-size:24px;color:#3b5998"
                             title="Facebook"></i></a>
-                    <a href="https://www.instagram.com/_0shan_/" target="_blank">
-                        <i class="fab fa-instagram" style="font-size:24px;color:#fb3958" title="Instagram"></i></a>
                 </div>
             </div>
         </div>

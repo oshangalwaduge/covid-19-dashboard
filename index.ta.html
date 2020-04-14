@@ -70,7 +70,9 @@
             <div class="row mt-4 justify-content-center">
                 <div class="col-12 inline">
                     <h5 class="text-center">கடைசியாக புதுப்பிக்கப்பட்டது</h5>
-                    <h4 class="text-center" id="last-time-updated"></h4>
+                    <h5 class="text-center" id="last-time-updated-ta"></h5>
+                    <div class="d-none" id="last-time-updated"></div>
+                    <div class="d-none" id="last-time-updated-si"></div>
                 </div>
             </div>
         </header>
@@ -88,7 +90,7 @@
                 <div class="card mt-5 border-warning" title="உலகளவில் உறுதிப்படுத்தப்பட்ட மொத்த COVID-19 வழக்குகள்">
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <i class='fas fa-hospital' style='font-size:48px;color:orange'></i>
+                            <i class='fas fa-hospital' style='font-size:48px;color:#ffc107'></i>
                         </div>
                         <br />
                         <h3 class="card-title text-center text-warning" id="global-total"></h3>
@@ -123,14 +125,14 @@
             </div>
 
             <div class="col-12 col-sm-6 col-md-4 d-flex">
-                <div class="card mt-5 border-dark flex-fill"
+                <div class="card mt-5 flex-fill" style="border-color: #e83e8c;"
                     title="COVID-19 காரணமாக உலகளாவிய இறப்புகள் கடந்த 24 மணி நேரத்தில் பதிவாகியுள்ளன">
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <i class='fas fa-heart-broken' style='font-size:48px;color:black'></i>
+                            <i class='fas fa-heart-broken' style='font-size:48px;color: #e83e8c;'></i>
                         </div>
                         <br />
-                        <h3 class="card-title text-center text-dark" id="global-new-deaths"></h3>
+                        <h3 class="card-title text-center" id="global-new-deaths" style="color: #e83e8c;"></h3>
                         <h6 class=" card-subtitle text-center text-secondary">சமீபத்திய மரணங்கள்</h6>
                     </div>
                 </div>
@@ -166,7 +168,7 @@
                     title="இலங்கையில் உறுதிப்படுத்தப்பட்ட COVID-19 வழக்குகளின் ஒட்டுமொத்த எண்ணிக்கை">
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <i class='fas fa-hospital' style='font-size:48px;color:orange'></i>
+                            <i class='fas fa-hospital' style='font-size:48px;color:#ffc107'></i>
                         </div>
                         <br />
                         <h3 class="card-title text-center text-warning" id="total-cases"></h3>
@@ -204,14 +206,14 @@
             </div>
 
             <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
-                <div class="card mt-5 flex-fill border-dark"
+                <div class="card mt-5 flex-fill" style="border-color: #e83e8c;"
                     title="COVID-19 காரணமாக ஏற்பட்ட மொத்த இறப்புகள் கடந்த 24 மணி நேரத்தில் பதிவாகியுள்ளன.">
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <i class='fas fa-heart-broken' style='font-size:48px;color:black'></i>
+                            <i class='fas fa-heart-broken' style='font-size:48px;color: #e83e8c;'></i>
                         </div>
                         <br />
-                        <h3 class="card-title text-center text-dark" id="new-deaths">
+                        <h3 class="card-title text-center" id="new-deaths" style="color: #e83e8c;">
                         </h3>
                         <h6 class="card-subtitle text-center text-secondary">சமீபத்திய மரணங்கள்</h6>
                     </div>
@@ -329,13 +331,16 @@
             </div>
             <div class="col-12 col-md-6 d-flex">
                 <div class="card mt-5 flex-fill border-dark">
-                    <div class="card-body border-dark">
+                    <div class="card-body">
                         <div class="row justify-content-center">
                             <i class='far fa-clock' style='font-size:48px;color:#000'></i>
                         </div>
                         <br />
-                        <h6 class="card-subtitle text-center">கடைசியாக புதுப்பிக்கப்பட்டது</h6>
-                        <h3 class="card-title text-center align-middle" id="hplt">நேரம்</h3>
+                        <h6 class="card-subtitle text-center text-dark">கடைசியாக புதுப்பிக்கப்பட்டது</h6>
+                        <h5 class="card-title text-center align-middle text-dark" id="hplt_ta">நேரம்</h5>
+                        <div class="d-none" id="hplt"></div>
+                        <div class="d-none" id="hplt_si"></div>
+
                     </div>
                 </div>
             </div>
@@ -352,7 +357,8 @@
                         </div>
                         <br />
                         <h3 class="card-title text-center text-success" id="cumulativelocal">#</h3>
-                        <h6 class="card-subtitle text-center">சிகிச்சை பெற்ற / கவனிக்கப்பட்ட இலங்கையர்களின் மொத்த
+                        <h6 class="card-subtitle text-center text-secondary">சிகிச்சை பெற்ற / கவனிக்கப்பட்ட
+                            இலங்கையர்களின் மொத்த
                             எண்ணிக்கை
                         </h6>
                     </div>
@@ -367,7 +373,8 @@
                         </div>
                         <br />
                         <h3 class="card-title text-center text-success" id="cumulativeforeign">#</h3>
-                        <h6 class="card-subtitle text-center">சிகிச்சை பெற்ற / கவனிக்கப்பட்ட வெளிநாட்டினரின் மொத்த
+                        <h6 class="card-subtitle text-center text-secondary">சிகிச்சை பெற்ற / கவனிக்கப்பட்ட
+                            வெளிநாட்டினரின் மொத்த
                             எண்ணிக்கை
                         </h6>
                     </div>
@@ -382,7 +389,8 @@
                         </div>
                         <br />
                         <h3 class="card-title text-center text-warning" id="treatmentlocal">#</h3>
-                        <h6 class="card-subtitle text-center">தற்போது சிகிச்சை / கண்காணிப்பில் இருக்கும் இலங்கையர்களின்
+                        <h6 class="card-subtitle text-center text-secondary">தற்போது சிகிச்சை / கண்காணிப்பில் இருக்கும்
+                            இலங்கையர்களின்
                             மொத்த எண்ணிக்கை</h6>
                     </div>
                 </div>
@@ -396,7 +404,8 @@
                         </div>
                         <br />
                         <h3 class="card-title text-center text-warning" id="treatmentforeign">#</h3>
-                        <h6 class="card-subtitle text-center">தற்போது சிகிச்சை / கண்காணிப்பில் இருக்கும் மொத்த
+                        <h6 class="card-subtitle text-center text-secondary">தற்போது சிகிச்சை / கண்காணிப்பில் இருக்கும்
+                            மொத்த
                             வெளிநாட்டினரின் எண்ணிக்கை</h6>
                     </div>
                 </div>
@@ -409,7 +418,7 @@
         <!-- footer -->
         <div class="row mt-5">
             <div class="col-12">
-                <h6 class="text-center">தகவல் மூல - <a class="text-dark" href="https://www.hpb.health.gov.lk/en"
+                <h6 class="text-center">தகவல் மூல(API) - <a class="text-dark" href="https://www.hpb.health.gov.lk/en"
                         target="_blank">சுகாதார மேம்பாட்டு பணியகம் - இலங்கை</a>
                 </h6>
                 <h6 class="text-center">வடிவமைக்கப்பட்டது ஓஷன் கால்வாடுகே</h6>
@@ -419,8 +428,6 @@
                     <a href="https://facebook.com/oshangalwaduge" target="_blank">
                         <i class="fab fa-facebook-square mr-3" style="font-size:24px;color:#3b5998"
                             title="Facebook"></i></a>
-                    <a href="https://www.instagram.com/_0shan_/" target="_blank">
-                        <i class="fab fa-instagram" style="font-size:24px;color:#fb3958" title="Instagram"></i></a>
                 </div>
             </div>
         </div>

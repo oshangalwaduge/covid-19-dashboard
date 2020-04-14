@@ -68,7 +68,9 @@
       <div class="row mt-4 justify-content-center">
         <div class="col-12 inline">
           <h5 class="text-center">Last Time Updated</h5>
-          <h4 class="text-center" id="last-time-updated"></h4>
+          <h5 class="text-center" id="last-time-updated"></h5>
+          <div class="d-none" id="last-time-updated-ta"></div>
+          <div class="d-none" id="last-time-updated-si"></div>
         </div>
       </div>
     </header>
@@ -86,7 +88,7 @@
         <div class="card mt-5 border-warning flex-fill" title="Total global confirmed COVID-19 cases">
           <div class="card-body">
             <div class="row justify-content-center">
-              <i class='fas fa-hospital' style='font-size:48px;color:orange'></i>
+              <i class='fas fa-hospital' style='font-size:48px;color:#ffc107'></i>
             </div>
             <br />
             <h3 class="card-title text-center text-warning" id="global-total"></h3>
@@ -121,14 +123,14 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 d-flex">
-        <div class="card mt-5 border-dark flex-fill"
+        <div class="card mt-5 flex-fill" style="border-color: #e83e8c;"
           title="Global deaths due to COVID-19 reported during last 24 hours">
           <div class="card-body">
             <div class="row justify-content-center">
-              <i class='fas fa-heart-broken' style='font-size:48px;color:black'></i>
+              <i class='fas fa-heart-broken' style='font-size:48px;color:#e83e8c'></i>
             </div>
             <br />
-            <h3 class="card-title text-center text-dark" id="global-new-deaths"></h3>
+            <h3 class="card-title text-center" id="global-new-deaths" style="color: #e83e8c;"></h3>
             <h6 class=" card-subtitle text-center text-secondary">Recent Deaths</h6>
           </div>
         </div>
@@ -163,7 +165,7 @@
           title="Cumulative count of confirmed COVID-19 cases in Sri Lanka">
           <div class="card-body">
             <div class="row justify-content-center">
-              <i class='fas fa-hospital' style='font-size:48px;color:orange'></i>
+              <i class='fas fa-hospital' style='font-size:48px;color:#ffc107'></i>
             </div>
             <br />
             <h3 class="card-title text-center text-warning" id="total-cases"></h3>
@@ -173,14 +175,14 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
-        <div class="card mt-5 flex-fill border-info"
+        <div class="card mt-5 flex-fill" style="border-color: #6610f2;"
           title="Confirmed COVID-19 cases currently on treatment at the Hospitals in Sri Lanka">
           <div class="card-body">
             <div class="row justify-content-center">
-              <i class='fas fa-procedures' style='font-size:48px;color:#17a2b8'></i>
+              <i class='fas fa-procedures' style='font-size:48px;color:#6610f2'></i>
             </div>
             <br />
-            <h3 class="card-title text-center text-info" id="active-cases"></h3>
+            <h3 class="card-title text-center" id="active-cases" style="color: #6610f2;"></h3>
             <h6 class="card-subtitle text-center text-secondary">Active Cases</h6>
           </div>
         </div>
@@ -200,14 +202,14 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
-        <div class="card mt-5 flex-fill border-dark"
+        <div class="card mt-5 flex-fill" style="border-color: #e83e8c;"
           title="Total deaths due to COVID-19 reported during last 24 hours.">
           <div class="card-body">
             <div class="row justify-content-center">
-              <i class='fas fa-heart-broken' style='font-size:48px;color:black'></i>
+              <i class='fas fa-heart-broken' style='font-size:48px;color: #e83e8c;'></i>
             </div>
             <br />
-            <h3 class="card-title text-center text-dark" id="new-deaths" title="Between Last 24 Hours."></h3>
+            <h3 class="card-title text-center" id="new-deaths" style="color: #e83e8c;"></h3>
             <h6 class="card-subtitle text-center text-secondary" title="Between Last 24 Hours.">Recent Deaths</h6>
           </div>
         </div>
@@ -312,7 +314,7 @@
             <br />
             <div id="hpnta" class="d-none"></div>
             <div id="hpnsi" class="d-none"></div>
-            <h3 class="card-title text-center" id="hpn">Hospital</h3>
+            <h3 class="card-title text-center text-dark" id="hpn">Hospital</h3>
           </div>
         </div>
       </div>
@@ -323,8 +325,10 @@
               <i class='far fa-clock' style='font-size:48px;color:#000'></i>
             </div>
             <br />
-            <h6 class="card-subtitle text-center">Last Time Updated</h6>
-            <h3 class="card-title text-center align-middle" id="hplt">Time</h3>
+            <h6 class="card-subtitle text-center text-dark">Last Time Updated</h6>
+            <h5 class="card-title text-center align-middle text-dark" id="hplt">Time</h5>
+            <div class="d-none" id="hplt_ta"></div>
+            <div class="d-none" id="hplt_si"></div>
           </div>
         </div>
       </div>
@@ -341,7 +345,8 @@
             </div>
             <br />
             <h3 class="card-title text-center text-success" id="cumulativelocal">#</h3>
-            <h6 class="card-subtitle text-center">Total # of Sri Lankans who have been treated / observed</h6>
+            <h6 class="card-subtitle text-center text-secondary">Total # of Sri Lankans who have been treated / observed
+            </h6>
           </div>
         </div>
       </div>
@@ -354,7 +359,8 @@
             </div>
             <br />
             <h3 class="card-title text-center text-success" id="cumulativeforeign">#</h3>
-            <h6 class="card-subtitle text-center">Total # of foreigners who have been treated / observed</h6>
+            <h6 class="card-subtitle text-center text-secondary">Total # of foreigners who have been treated / observed
+            </h6>
           </div>
         </div>
       </div>
@@ -367,7 +373,8 @@
             </div>
             <br />
             <h3 class="card-title text-center text-warning" id="treatmentlocal">#</h3>
-            <h6 class="card-subtitle text-center">Total # of Sri Lankans who are currently on treatment/observation
+            <h6 class="card-subtitle text-center text-secondary">Total # of Sri Lankans who are currently on treatment /
+              observation
             </h6>
           </div>
         </div>
@@ -381,7 +388,8 @@
             </div>
             <br />
             <h3 class="card-title text-center text-warning" id="treatmentforeign">#</h3>
-            <h6 class="card-subtitle text-center">Total # of foreigners who are currently on treatment/observation
+            <h6 class="card-subtitle text-center text-secondary">Total # of foreigners who are currently on treatment /
+              observation
             </h6>
           </div>
         </div>
@@ -394,17 +402,15 @@
     <!-- footer -->
     <div class="row mt-5">
       <div class="col-12">
-        <h6 class="text-center">Information Source - <a class="text-dark" href="https://www.hpb.health.gov.lk/en"
+        <h6 class="text-center">Information Source(API) - <a class="text-dark" href="https://www.hpb.health.gov.lk/en"
             target="_blank">Health
             Promotion Bureau - Sri Lanka</a></h6>
-        <h6 class="text-center">Designed by Oshan Galwaduge</h6>
+        <h6 class="text-center">Made by Oshan Galwaduge</h6>
         <div class="row justify-content-center">
           <a href="https://www.linkedin.com/in/oshan-galwaduge-0a7615139/" target="_blank">
             <i class="fab fa-linkedin mr-3" style="font-size:24px;color:#0072b1" title="LinkedIn"></i></a>
           <a href="https://facebook.com/oshangalwaduge" target="_blank">
             <i class="fab fa-facebook-square mr-3" style="font-size:24px;color:#3b5998" title="Facebook"></i></a>
-          <a href="https://www.instagram.com/_0shan_/" target="_blank">
-            <i class="fab fa-instagram" style="font-size:24px;color:#fb3958" title="Instagram"></i></a>
         </div>
       </div>
     </div>
