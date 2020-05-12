@@ -26,6 +26,8 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
       let newDeaths = information.data.local_new_deaths;
       let recovered = information.data.local_recovered;
       let deaths = information.data.local_deaths;
+      let inhospital = information.data.local_total_number_of_individuals_in_hospitals;
+
       let tpcr = information.data.total_pcr_testing_count;
       let dailypcrdata = information.data.daily_pcr_testing_data;
       let ydaypcrcount = dailypcrdata.slice(-1)[0].count;
@@ -58,6 +60,8 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
       document.getElementById("total-pcr").innerHTML = tpcr.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
       document.getElementById("yesterday-pcr").innerHTML = ydaypcrcount.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
       document.getElementById("last-pcr-date").innerHTML = ydaypcrdate;
+
+      document.getElementById("in-hospitals").innerHTML = inhospital.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 
       document.getElementById("last-time-updated").innerHTML = "On " + updatedTime.split(" ")[0] + "<br /> At " + updatedTime.split(" ")[1].substr(0, 5) + " " + mrdm;
