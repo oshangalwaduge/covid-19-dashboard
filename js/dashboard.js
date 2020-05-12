@@ -73,7 +73,7 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
       document.getElementById("total-cases").innerHTML = totalCases.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
       document.getElementById("active-cases").innerHTML = activeCases.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
       document.getElementById("new-cases").innerHTML = newCases.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-      document.getElementById("new-deaths").innerHTML = newDeaths.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      //document.getElementById("new-deaths").innerHTML = newDeaths.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
       document.getElementById("recovered").innerHTML = recovered.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
       document.getElementById("deaths").innerHTML = deaths.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
