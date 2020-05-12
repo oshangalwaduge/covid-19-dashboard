@@ -85,6 +85,37 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-12 col-md-6 d-flex">
+                <div class="card mt-5 flex-fill" style="border-color: #00695c;"
+                    title="நிகழ்த்தப்பட்ட பி.சி.ஆர் சோதனை களின் மொத்த எண்ணிக்கை">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-diagnoses' style='font-size:48px;color:#00695c'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center" id="total-pcr" style="color: #00695c;"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">நிகழ்த்தப்பட்ட பி.சி.ஆர் சோதனை களின் மொத்த
+                            எண்ணிக்கை</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex">
+                <div class="card mt-5 flex-fill" style="border-color: #2BBBAD;"
+                    title="நேற்று மேற்கொள்ளப்பட்ட பி.சி.ஆர் சோதனைகளின் எண்ணிக்கை">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-diagnoses' style='font-size:48px;color:#2BBBAD'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center" id="yesterday-pcr" style="color: #2BBBAD;"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">நேற்று மேற்கொள்ளப்பட்ட பி.சி.ஆர் சோதனைகளின்
+                            எண்ணிக்கை (<span id="last-pcr-date"></span>)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row  d-flex justify-content-center">
             <div class="col-12 col-sm-6 col-md-4 flex-fill">
                 <div class="card mt-5 border-warning" title="உலகளவில் உறுதிப்படுத்தப்பட்ட மொத்த COVID-19 வழக்குகள்">
@@ -124,7 +155,23 @@
                 </div>
             </div>
 
-            <div class="col-12 col-sm-6 col-md-4 d-flex">
+            <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+                <div class="card mt-5 flex-fill" style="border-color: #aa66cc;"
+                    title="மருத்துவமனைகளில் கண்காணிக்கப்படும் COVID-19 சந்தேக நபர்களின் மொத்த எண்ணிக்கை.">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-heartbeat' style='font-size:48px;color: #aa66cc;'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center" id="new-deaths" style="color: #aa66cc;"></h3>
+                        <h6 class="card-subtitle text-center text-secondary" title="Between Last 24 Hours.">Individuals
+                            are being
+                            observed in hospitals.</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-12 col-sm-6 col-md-4 d-flex">
                 <div class="card mt-5 flex-fill" style="border-color: #e83e8c;"
                     title="COVID-19 காரணமாக உலகளாவிய இறப்புகள் கடந்த 24 மணி நேரத்தில் பதிவாகியுள்ளன">
                     <div class="card-body">
@@ -136,7 +183,7 @@
                         <h6 class=" card-subtitle text-center text-secondary">சமீபத்திய மரணங்கள்</h6>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-12 col-sm-6 col-md-4 d-flex">
                 <div class="card mt-5 border-success flex-fill"
                     title="மொத்த உலகளாவிய COVID-19 நோயாளிகள் மீட்கப்பட்டனர்">
@@ -308,6 +355,9 @@
                         <a class="dropdown-item" id="31" href="#hospital-section">போதனா வைத்தியசாலை- ஸ்ரீ
                             ஜயவர்த்தனபுர</a>
                         <a class="dropdown-item" id="32" href="#hospital-section">தள வைத்தியசாலை – பெருவாலா</a>
+                        <a class="dropdown-item" id="33" href="#hospital-section">தள வைத்தியசாலை – காத்தான்குடி</a>
+                        <a class="dropdown-item" id="34" href="#hospital-section">தள வைத்தியசாலை – மினுவாங்கோடா</a>
+                        <a class="dropdown-item" id="35" href="#hospital-section">கடற்படை வைத்தியசாலை</a>
                     </div>
                 </div>
             </div>

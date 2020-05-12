@@ -162,6 +162,37 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-12 col-md-6 d-flex">
+                <div class="card mt-5 flex-fill" style="border-color: #00695c;"
+                    title="සිදු කරන ලද මුළු PCR පරීක්ෂණ ගණන">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-diagnoses' style='font-size:48px;color:#00695c'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center" id="total-pcr" style="color: #00695c;"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">සිදු කරන ලද මුළු PCR පරීක්ෂණ ගණන</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex">
+                <div class="card mt-5 flex-fill" style="border-color: #2BBBAD;"
+                    title="Number of ඊයේ දිනය තුල සිදු කරන ලද PCR පරීක්ෂණ සංඛ්‍යාව">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-diagnoses' style='font-size:48px;color:#2BBBAD'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center" id="yesterday-pcr" style="color: #2BBBAD;"></h3>
+                        <h6 class="card-subtitle text-center text-secondary">ඊයේ දිනය තුල සිදු කරන ලද PCR පරීක්ෂණ
+                            සංඛ්‍යාව
+                            (<span id="last-pcr-date"></span>)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row justify-content-center">
             <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
                 <div class="card mt-5 flex-fill border-warning"
@@ -206,6 +237,21 @@
             </div>
 
             <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+                <div class="card mt-5 flex-fill" style="border-color: #aa66cc;"
+                    title="රෝහල්වල නිරීක්ෂණය කරනු ලබන COVID-19 සැකකරුවන්ගේ මුළු සංඛ්‍යාව.">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <i class='fas fa-heartbeat' style='font-size:48px;color: #aa66cc;'></i>
+                        </div>
+                        <br />
+                        <h3 class="card-title text-center" id="new-deaths" style="color: #aa66cc;"></h3>
+                        <h6 class="card-subtitle text-center text-secondary" title="Between Last 24 Hours.">
+                            மருத்துவமனைகளில் கவனிக்கப்படும் நோயாளிகளின் எண்ணிக்கை</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
                 <div class="card mt-5 flex-fill" style="border-color: #e83e8c;"
                     title="ශ්‍රී ලංකාව තුල පසුගිය පැය 24 තුළ COVID-19 හේතුවෙන් සිදු වූ මුළු මරණ සංඛ්‍යාව.">
                     <div class="card-body">
@@ -219,7 +265,7 @@
                             මරණ සංඛ්‍යාව</h6>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
                 <div class="card mt-5 flex-fill border-success"
@@ -303,6 +349,9 @@
                         <a class="dropdown-item" id="30" href="#hospital-section">මූලික රෝහල - මාරවිල</a>
                         <a class="dropdown-item" id="31" href="#hospital-section">දශික්ෂණ රෝහල - ශ්‍රී ජයවර්ධනපුර</a>
                         <a class="dropdown-item" id="32" href="#hospital-section">මූලික රෝහල - බේරුවල</a>
+                        <a class="dropdown-item" id="33" href="#hospital-section">මූලික රෝහල - කාතන්කුඩි</a>
+                        <a class="dropdown-item" id="34" href="#hospital-section">මූලික රෝහල - මිනුවන්ගොඩ</a>
+                        <a class="dropdown-item" id="35" href="#hospital-section">නාවික හමුදා රෝහල</a>
                     </div>
                 </div>
             </div>

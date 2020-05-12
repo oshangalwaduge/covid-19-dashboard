@@ -26,6 +26,10 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
       let newDeaths = information.data.local_new_deaths;
       let recovered = information.data.local_recovered;
       let deaths = information.data.local_deaths;
+      let tpcr = information.data.total_pcr_testing_count;
+      let dailypcrdata = information.data.daily_pcr_testing_data;
+      let ydaypcrcount = dailypcrdata.slice(-1)[0].count;
+      let ydaypcrdate = dailypcrdata.slice(-1)[0].date;
 
       let mrdm, mrdm_ta, mrdm_si;
       let format = parseInt(updatedTime.split(" ")[1].substr(0, 2));
@@ -51,6 +55,9 @@ fetch("https://www.hpb.health.gov.lk/api/get-current-statistical")
         mrdm_si = "පෙරවරු";
       }
 
+      document.getElementById("total-pcr").innerHTML = tpcr.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("yesterday-pcr").innerHTML = ydaypcrcount.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+      document.getElementById("last-pcr-date").innerHTML = ydaypcrdate;
 
 
       document.getElementById("last-time-updated").innerHTML = "On " + updatedTime.split(" ")[0] + "<br /> At " + updatedTime.split(" ")[1].substr(0, 5) + " " + mrdm;

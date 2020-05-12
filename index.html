@@ -153,9 +153,40 @@
 
     <!-- local start -->
 
+
+
     <div class="row mt-5">
       <div class="col-12">
         <h1 class="text-center">Sri Lankan</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 d-flex">
+        <div class="card mt-5 flex-fill" style="border-color: #00695c;" title="Total Number of PCR tests performed">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-diagnoses' style='font-size:48px;color:#00695c'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center" id="total-pcr" style="color: #00695c;"></h3>
+            <h6 class="card-subtitle text-center text-secondary">Total Number of PCR tests performed</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 d-flex">
+        <div class="card mt-5 flex-fill" style="border-color: #2BBBAD;"
+          title="Number of PCR Tests were on performed on yesterday">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-diagnoses' style='font-size:48px;color:#2BBBAD'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center" id="yesterday-pcr" style="color: #2BBBAD;"></h3>
+            <h6 class="card-subtitle text-center text-secondary">PCR Tests were on performed on yesterday (<span
+                id="last-pcr-date"></span>)</h6>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -175,14 +206,14 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
-        <div class="card mt-5 flex-fill" style="border-color: #6610f2;"
+        <div class="card mt-5 flex-fill" style="border-color: #ff4444;"
           title="Confirmed COVID-19 cases currently on treatment at the Hospitals in Sri Lanka">
           <div class="card-body">
             <div class="row justify-content-center">
-              <i class='fas fa-procedures' style='font-size:48px;color:#6610f2'></i>
+              <i class='fas fa-procedures' style='font-size:48px;color:#ff4444'></i>
             </div>
             <br />
-            <h3 class="card-title text-center" id="active-cases" style="color: #6610f2;"></h3>
+            <h3 class="card-title text-center" id="active-cases" style="color: #ff4444;"></h3>
             <h6 class="card-subtitle text-center text-secondary">Active Cases</h6>
           </div>
         </div>
@@ -201,7 +232,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+      <!-- <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
         <div class="card mt-5 flex-fill" style="border-color: #e83e8c;"
           title="Total deaths due to COVID-19 reported during last 24 hours.">
           <div class="card-body">
@@ -211,6 +242,21 @@
             <br />
             <h3 class="card-title text-center" id="new-deaths" style="color: #e83e8c;"></h3>
             <h6 class="card-subtitle text-center text-secondary" title="Between Last 24 Hours.">Recent Deaths</h6>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
+        <div class="card mt-5 flex-fill" style="border-color: #aa66cc;"
+          title="Total # of Suspects who are being observed in hospitals.">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <i class='fas fa-heartbeat' style='font-size:48px;color: #aa66cc;'></i>
+            </div>
+            <br />
+            <h3 class="card-title text-center" id="new-deaths" style="color: #aa66cc;"></h3>
+            <h6 class="card-subtitle text-center text-secondary" title="Between Last 24 Hours.">Individuals are being
+              observed in hospitals.</h6>
           </div>
         </div>
       </div>
@@ -230,13 +276,14 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-3 col-xl-2 d-flex">
-        <div class="card mt-5 flex-fill border-danger" title="Total deaths due to COVID-19 reported in Sri Lanka">
+        <div class="card mt-5 flex-fill" style="border-color:#CC0000"
+          title="Total deaths due to COVID-19 reported in Sri Lanka">
           <div class="card-body">
             <div class="row justify-content-center">
-              <i class='fas fa-bed' style='font-size:48px;color:#dc3545'></i>
+              <i class='fas fa-bed' style='font-size:48px;color:#CC0000'></i>
             </div>
             <br />
-            <h3 class="card-title text-center text-danger" id="deaths"></h3>
+            <h3 class="card-title text-center" style="color:#CC0000" id="deaths"></h3>
             <h6 class="card-subtitle text-center text-secondary">Deaths</h6>
           </div>
         </div>
@@ -297,6 +344,9 @@
             <a class="dropdown-item" id="30" href="#hospital-section">Base Hospital - Marawila</a>
             <a class="dropdown-item" id="31" href="#hospital-section">Teaching Hospital - Sri Jayawadhanapura</a>
             <a class="dropdown-item" id="32" href="#hospital-section">Base Hospital - Beruwala</a>
+            <a class="dropdown-item" id="33" href="#hospital-section">Base Hospital – Kathankudi</a>
+            <a class="dropdown-item" id="34" href="#hospital-section">Base Hospital – Minuwangoda</a>
+            <a class="dropdown-item" id="35" href="#hospital-section">Navy Hospital</a>
           </div>
         </div>
       </div>
